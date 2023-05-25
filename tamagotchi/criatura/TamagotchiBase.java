@@ -1,9 +1,10 @@
 package tamagotchi.criatura;
 
-import java.lang.Thread;
 import tamagotchi.animacao.Animacao;
+import java.lang.Thread;
+import java.io.Serializable;
 
-public abstract class TamagotchiBase {
+public abstract class TamagotchiBase implements Serializable {
     // Constantes
     public final int RELOGIO_DOS_STATUS = 500;
     public final int RELOGIO_DA_ANIMACAO = 1000;
@@ -29,8 +30,8 @@ public abstract class TamagotchiBase {
     protected int estadoAtual;
     protected Animacao anm;
 
-    protected Thread controladorDosStatus = new Thread(new StatusRunnable(this));
-    protected Thread controladorDaAnimacao = new Thread(new AnimacaoRunnable(this));
+    transient protected Thread controladorDosStatus = new Thread(new StatusRunnable(this));
+    transient protected Thread controladorDaAnimacao = new Thread(new AnimacaoRunnable(this));
 
     // Construtor
     public TamagotchiBase(String nome) {
@@ -122,6 +123,12 @@ public abstract class TamagotchiBase {
 
     public void matar() {
         this.estaVivo = false;
+    }
+
+    public void reiniciar() {
+        this.estaVivo = true;
+        this.controladorDosStatus = new Thread(new StatusRunnable(this));
+        this.controladorDaAnimacao = new Thread(new AnimacaoRunnable(this));
     }
 
     public void resetarEstado() {
