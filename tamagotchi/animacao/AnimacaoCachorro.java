@@ -32,65 +32,41 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int numeroDeFrames = 2;
         int tempoDoFrame = Animacao.TEMPO_COMENDO / numeroDeFrames;
 
-        this.limpaTela();
         AnimacaoMaca.maca1();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
 
-        this.limpaTela();
         AnimacaoMaca.maca2();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
 
-        this.limpaTela();
         AnimacaoMaca.maca3();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
 
-        this.limpaTela();
         AnimacaoMaca.maca4();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
 
-        this.limpaTela();
         AnimacaoMaca.maca5();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
 
-        this.limpaTela();
         AnimacaoMaca.maca6();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
 
-        this.limpaTela();
         AtoComer1.atoComer1();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
 
-        this.limpaTela();
         AtoComer1.atoComer2();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
 
-        this.limpaTela();
         AtoComer1.atoComer3();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+       cicloDeAnimação()
 
-        this.limpaTela();
         AtoComer1.atoComer4();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
 
-        this.limpaTela();
         AtoComer1.atoComer5();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
         
-        this.limpaTela();
         AtoComer1.atoComer6();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação()
         
     }
 
@@ -173,5 +149,11 @@ public class AnimacaoCachorro implements Animacao, Serializable {
             Thread.sleep(tempo);
         } catch (Exception e) {
         }
+    }
+
+    public void cicloDeAnimação(){
+        this.mostrarStatus();
+        this.esperar();
+        this.limpaTela();
     }
 }
