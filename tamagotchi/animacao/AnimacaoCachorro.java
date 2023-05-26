@@ -33,40 +33,40 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int tempoDoFrame = Animacao.TEMPO_COMENDO / numeroDeFrames;
 
         AnimacaoMaca.maca1();
-        cicloDeAnimação()
+        cicloDeAnimação();
 
         AnimacaoMaca.maca2();
-        cicloDeAnimação()
+        cicloDeAnimação();
 
         AnimacaoMaca.maca3();
-        cicloDeAnimação()
+        cicloDeAnimação();
 
         AnimacaoMaca.maca4();
-        cicloDeAnimação()
+        cicloDeAnimação();
 
         AnimacaoMaca.maca5();
-        cicloDeAnimação()
+        cicloDeAnimação();
 
         AnimacaoMaca.maca6();
-        cicloDeAnimação()
+        cicloDeAnimação();
 
         AtoComer1.atoComer1();
-        cicloDeAnimação()
+        cicloDeAnimação();
 
         AtoComer1.atoComer2();
-        cicloDeAnimação()
+        cicloDeAnimação();
 
         AtoComer1.atoComer3();
-       cicloDeAnimação()
+       cicloDeAnimação();
 
         AtoComer1.atoComer4();
-        cicloDeAnimação()
+        cicloDeAnimação();
 
         AtoComer1.atoComer5();
-        cicloDeAnimação()
+        cicloDeAnimação();
         
         AtoComer1.atoComer6();
-        cicloDeAnimação()
+        cicloDeAnimação();
         
     }
 
@@ -152,8 +152,10 @@ public class AnimacaoCachorro implements Animacao, Serializable {
     }
 
     public void cicloDeAnimação(){
+        int numeroDeFrames = 2;
+        int tempoDoFrame = Animacao.TEMPO_COMENDO / numeroDeFrames;
         this.mostrarStatus();
-        this.esperar();
+        this.esperar(tempoDoFrame);
         this.limpaTela();
     }
 }
