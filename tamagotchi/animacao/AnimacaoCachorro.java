@@ -63,6 +63,36 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         AnimacaoMaca.maca6();
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AtoComer1.atoComer1();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AtoComer1.atoComer2();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AtoComer1.atoComer3();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AtoComer1.atoComer4();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AtoComer1.atoComer5();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+        
+        this.limpaTela();
+        AtoComer1.atoComer6();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
         
     }
 
