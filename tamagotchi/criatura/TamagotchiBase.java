@@ -7,8 +7,6 @@ import java.io.Serializable;
 public abstract class TamagotchiBase implements Serializable {
     // Constantes
     public final int RELOGIO_DOS_STATUS = 500;
-    public final int RELOGIO_DA_ANIMACAO = 1000;
-    public final int FATOR_DE_TEMPO_DE_ACAO = 3;
     public final int FOME_MINIMA = 0;
     public final int FOME_MAXIMA = 100;
     public final int ENERGIA_MINIMA = 0;
@@ -101,24 +99,24 @@ public abstract class TamagotchiBase implements Serializable {
     public void alimentar() {
         this.setEstadoAtual(this.COMENDO);
         this.fome = this.FOME_MINIMA;
-        this.resetarEstado();
+        this.resetarEstado(Animacao.TEMPO_COMENDO);
     }
 
     public void brincar() {
         this.setEstadoAtual(this.BRINCANDO);
-        this.resetarEstado();
+        this.resetarEstado(Animacao.TEMPO_BRINCANDO);
     }
 
     public void limpar() {
         this.setEstadoAtual(this.LIMPANDO);
         this.limpeza = this.LIMPEZA_MAXIMA;
-        this.resetarEstado();
+        this.resetarEstado(Animacao.TEMPO_LIMPANDO);
     }
 
     public void dormir() {
         this.setEstadoAtual(this.DORMINDO);
         this.energia = this.ENERGIA_MAXIMA;
-        this.resetarEstado();
+        this.resetarEstado(Animacao.TEMPO_DORMINDO);
     }
 
     public void matar() {
@@ -131,9 +129,9 @@ public abstract class TamagotchiBase implements Serializable {
         this.controladorDaAnimacao = new Thread(new AnimacaoRunnable(this));
     }
 
-    public void resetarEstado() {
+    public void resetarEstado(int tempo) {
         try {
-            Thread.sleep(this.RELOGIO_DA_ANIMACAO * this.FATOR_DE_TEMPO_DE_ACAO);
+            Thread.sleep(tempo);
         } catch (InterruptedException e) {
         }
         this.setEstadoAtual(this.PARADO);

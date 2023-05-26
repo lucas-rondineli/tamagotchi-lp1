@@ -1,8 +1,14 @@
 package tamagotchi.animacao;
 
 public interface Animacao {
-    public final int NUMERO_DE_FRAMES = 2;
+    // Constantes
+    public int TEMPO_PARADO = 1000;
+    public int TEMPO_COMENDO = 1000;
+    public int TEMPO_BRINCANDO = 1000;
+    public int TEMPO_DORMINDO = 1000;
+    public int TEMPO_LIMPANDO = 1000;
 
+    // Métodos
     public void parado();
 
     public void comendo();
@@ -19,13 +25,5 @@ public interface Animacao {
 
     public void limpaTela();
 
-    public void esperar();
+    public void esperar(int tempo);
 }
-
-// Ações Atuais: 1) Alimentar 2) Brincar 3) Banheiro 4) Dormir 0) Finalizar
-// Tipos Atuais: 1) Cachorro 2) Gato
-
-// Onde mudar:
-// controle.Entrada
-// criatura.TamagotchiCachorro.java
-// criatura.TamagotchiGato.java

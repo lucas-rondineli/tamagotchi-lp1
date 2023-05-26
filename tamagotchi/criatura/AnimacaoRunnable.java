@@ -1,6 +1,5 @@
 package tamagotchi.criatura;
 
-import tamagotchi.animacao.Animacao;
 import java.lang.Runnable;
 
 class AnimacaoRunnable implements Runnable {
@@ -24,11 +23,6 @@ class AnimacaoRunnable implements Runnable {
                 this.tamagotchi.getAnimacao().dormindo();
             else if (estadoAtual == this.tamagotchi.LIMPANDO)
                 this.tamagotchi.getAnimacao().limpando();
-
-            try {
-                Thread.sleep(this.tamagotchi.RELOGIO_DA_ANIMACAO / Animacao.NUMERO_DE_FRAMES);
-            } catch (InterruptedException e) {
-            }
         }
     }
 }
