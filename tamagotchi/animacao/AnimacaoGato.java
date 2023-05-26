@@ -1,8 +1,9 @@
 package tamagotchi.animacao;
 
 import tamagotchi.criatura.TamagotchiBase;
+import java.io.Serializable;
 
-public class AnimacaoGato implements Animacao {
+public class AnimacaoGato implements Animacao, Serializable {
     // Atributos
     private TamagotchiBase tamagotchi;
 
