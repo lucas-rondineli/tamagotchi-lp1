@@ -1,3 +1,5 @@
+package tamagotchi.animacao;
+
 
         public class AtoBrabo {
             public static void brabo1(){

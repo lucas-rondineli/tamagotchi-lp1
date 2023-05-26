@@ -18,13 +18,13 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int tempoDoFrame = Animacao.TEMPO_PARADO / numeroDeFrames;
 
         this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO PARADO - Frame 1");
+        AtoPadrao.padrao1();
         this.mostrarStatus();
         System.out.printf("1) Alimentar    2) Brincar    3) Banheiro    4) Dormir    0) Finalizar");
         this.esperar(tempoDoFrame);
         
         this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO PARADO - Frame 2");
+        AtoPadrao.padrao2();
         this.mostrarStatus();
         System.out.printf("1) Alimentar    2) Brincar    3) Banheiro    4) Dormir    0) Finalizar");
         this.esperar(tempoDoFrame);
@@ -35,14 +35,35 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int tempoDoFrame = Animacao.TEMPO_COMENDO / numeroDeFrames;
 
         this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO COMENDO - Frame 1");
+        AnimacaoMaca.maca1();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AnimacaoMaca.maca2();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AnimacaoMaca.maca3();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AnimacaoMaca.maca4();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AnimacaoMaca.maca5();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+
+        this.limpaTela();
+        AnimacaoMaca.maca6();
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
         
-        this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO COMENDO - Frame 2");
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
     }
 
     public void brincando() {
@@ -92,6 +113,7 @@ public class AnimacaoCachorro implements Animacao, Serializable {
 
     public void morto() {
         this.limpaTela();
+        GameOver.gameover();
         System.out.printf("Tchau bichinho %s :c\n", this.tamagotchi.getNome());
     }
 

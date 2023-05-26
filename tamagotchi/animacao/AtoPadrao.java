@@ -1,3 +1,5 @@
+package tamagotchi.animacao;
+
 public class AtoPadrao {
     public static void padrao1() {
         System.out.println("\n\n\n\n\n\n\n\n");

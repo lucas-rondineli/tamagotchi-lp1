@@ -1,3 +1,5 @@
+package tamagotchi.animacao;
+
 public class GameOver {
     public static void gameover (){
         System.out.println(

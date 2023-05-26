@@ -1,3 +1,5 @@
+package tamagotchi.animacao;
+
 public class AtoComer1 {
     public static void atoComer1(){
         System.out.println("\n\n\n\n\n\n\n\n");

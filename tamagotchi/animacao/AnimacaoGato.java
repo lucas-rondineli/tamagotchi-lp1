@@ -92,7 +92,7 @@ public class AnimacaoGato implements Animacao, Serializable {
 
     public void morto() {
         this.limpaTela();
-        System.out.printf("Tchau bichinho %s :c\n", this.tamagotchi.getNome());
+        GameOver.gameover();
     }
 
     public void mostrarStatus() {

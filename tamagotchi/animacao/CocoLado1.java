@@ -1,3 +1,5 @@
+package tamagotchi.animacao;
+
 public class CocoLado1 {
     public static void coco1(){
         System.out.println("\n\n\n\n\n\n\n\n");
