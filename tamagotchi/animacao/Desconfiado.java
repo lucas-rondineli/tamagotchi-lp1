@@ -1,7 +1,7 @@
 package tamagotchi.animacao;
 
 
-        public class AtoBrabo {
+        public class Desconfiado {
             public static void brabo1(){
                 System.out.println("\n\n\n\n\n\n\n\n");
                 System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");

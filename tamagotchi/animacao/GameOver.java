@@ -1,5 +1,7 @@
 package tamagotchi.animacao;
 
+import tamagotchi.criatura.TamagotchiCachorro;
+
 public class GameOver {
     public static void gameover (){
         System.out.println(
@@ -29,8 +31,6 @@ public class GameOver {
                         "┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼\n" +
                         "┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
 
-        System.out.println("┼┼┼┼┼┼┼ SEU TAMAGOTCHI MORREU ┼┼┼┼┼┼");
-        System.out.println("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
     }
 
 }

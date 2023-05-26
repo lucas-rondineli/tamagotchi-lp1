@@ -20,13 +20,11 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         this.limpaTela();
         AtoPadrao.padrao1();
         this.mostrarStatus();
-        System.out.printf("1) Alimentar    2) Brincar    3) Banheiro    4) Dormir    0) Finalizar");
         this.esperar(tempoDoFrame);
         
         this.limpaTela();
         AtoPadrao.padrao2();
         this.mostrarStatus();
-        System.out.printf("1) Alimentar    2) Brincar    3) Banheiro    4) Dormir    0) Finalizar");
         this.esperar(tempoDoFrame);
     }
 
@@ -101,12 +99,22 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int tempoDoFrame = Animacao.TEMPO_BRINCANDO / numeroDeFrames;
 
         this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO BRINCANDO - Frame 1");
+        AtoPadrao.padrao1();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+        
+        this.limpaTela();
+        AtoPadrao.padrao2();
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
 
         this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO BRINCANDO - Frame 2");
+        Desconfiado.brabo1();
+        this.mostrarStatus();
+        this.esperar(tempoDoFrame);
+        
+        this.limpaTela();
+        Desconfiado.brabo2();
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
     }
@@ -144,7 +152,8 @@ public class AnimacaoCachorro implements Animacao, Serializable {
     public void morto() {
         this.limpaTela();
         GameOver.gameover();
-        System.out.printf("Tchau bichinho %s :c\n", this.tamagotchi.getNome());
+        System.out.printf("┼┼┼┼┼┼┼ SEU %s MORREU ┼┼┼┼┼┼%n", this.tamagotchi.getNome());
+        System.out.println("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
     }
 
     public void mostrarStatus() {
