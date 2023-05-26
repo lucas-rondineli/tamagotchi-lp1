@@ -3,12 +3,12 @@ package tamagotchi.animacao;
 import tamagotchi.criatura.TamagotchiBase;
 import java.io.Serializable;
 
-public class AnimacaoGato implements Animacao, Serializable {
+public class AnimacaoCachorro implements Animacao, Serializable {
     // Atributos
     private TamagotchiBase tamagotchi;
 
     // Construtor
-    public AnimacaoGato(TamagotchiBase tamagotchi) {
+    public AnimacaoCachorro(TamagotchiBase tamagotchi) {
         this.tamagotchi = tamagotchi;
     }
 
@@ -18,13 +18,13 @@ public class AnimacaoGato implements Animacao, Serializable {
         int tempoDoFrame = Animacao.TEMPO_PARADO / numeroDeFrames;
 
         this.limpaTela();
-        System.out.println("ASCII Art do GATO PARADO - Frame 1");
+        System.out.println("ASCII Art do CACHORRO PARADO - Frame 1");
         this.mostrarStatus();
         System.out.printf("1) Alimentar    2) Brincar    3) Banheiro    4) Dormir    0) Finalizar");
         this.esperar(tempoDoFrame);
         
         this.limpaTela();
-        System.out.println("ASCII Art do GATO PARADO - Frame 2");
+        System.out.println("ASCII Art do CACHORRO PARADO - Frame 2");
         this.mostrarStatus();
         System.out.printf("1) Alimentar    2) Brincar    3) Banheiro    4) Dormir    0) Finalizar");
         this.esperar(tempoDoFrame);
@@ -35,12 +35,12 @@ public class AnimacaoGato implements Animacao, Serializable {
         int tempoDoFrame = Animacao.TEMPO_COMENDO / numeroDeFrames;
 
         this.limpaTela();
-        System.out.println("ASCII Art do GATO COMENDO - Frame 1");
+        System.out.println("ASCII Art do CACHORRO COMENDO - Frame 1");
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
         
         this.limpaTela();
-        System.out.println("ASCII Art do GATO COMENDO - Frame 2");
+        System.out.println("ASCII Art do CACHORRO COMENDO - Frame 2");
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
     }
@@ -50,12 +50,12 @@ public class AnimacaoGato implements Animacao, Serializable {
         int tempoDoFrame = Animacao.TEMPO_BRINCANDO / numeroDeFrames;
 
         this.limpaTela();
-        System.out.println("ASCII Art do GATO BRINCANDO - Frame 1");
+        System.out.println("ASCII Art do CACHORRO BRINCANDO - Frame 1");
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
 
         this.limpaTela();
-        System.out.println("ASCII Art do GATO BRINCANDO - Frame 2");
+        System.out.println("ASCII Art do CACHORRO BRINCANDO - Frame 2");
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
     }
@@ -65,12 +65,12 @@ public class AnimacaoGato implements Animacao, Serializable {
         int tempoDoFrame = Animacao.TEMPO_DORMINDO / numeroDeFrames;
 
         this.limpaTela();
-        System.out.println("ASCII Art do GATO DORMINDO - Frame 1");
+        System.out.println("ASCII Art do CACHORRO DORMINDO - Frame 1");
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
 
         this.limpaTela();
-        System.out.println("ASCII Art do GATO DORMINDO - Frame 2");
+        System.out.println("ASCII Art do CACHORRO DORMINDO - Frame 2");
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
     }
@@ -80,12 +80,12 @@ public class AnimacaoGato implements Animacao, Serializable {
         int tempoDoFrame = Animacao.TEMPO_LIMPANDO / numeroDeFrames;
 
         this.limpaTela();
-        System.out.println("ASCII Art do GATO LIMPANDO - Frame 1");
+        System.out.println("ASCII Art do CACHORRO LIMPANDO - Frame 1");
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
 
         this.limpaTela();
-        System.out.println("ASCII Art do GATO LIMPANDO - Frame 2");
+        System.out.println("ASCII Art do CACHORRO LIMPANDO - Frame 2");
         this.mostrarStatus();
         this.esperar(tempoDoFrame);
     }

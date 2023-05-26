@@ -2,6 +2,9 @@
 *.xml
 *.iml
 
+# Program data file
+*.data
+
 # Compiled class file
 *.class
 
