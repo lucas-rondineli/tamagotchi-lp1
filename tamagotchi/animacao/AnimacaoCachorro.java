@@ -32,7 +32,6 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int numeroDeFrames = 2;
         int tempoDoFrame = Animacao.TEMPO_COMENDO / numeroDeFrames;
 
-        System.out.println("Teste");
         AnimacaoMaca.maca1();
         cicloDeAnimacao();
 
