@@ -13,12 +13,10 @@ public class Entrada {
         Validator vd = new Validator(System.in);
         TamagotchiBase tamagotchi;
         int opt;
-        String caminho = System.getProperty("user.dir") + "\\tamagotchi\\dados\\Tamagotchi.data";
 
         // Criando um Tamagotchi novo ou recuperando-o da memória
-        new File(System.getProperty("user.dir") + "\\tamagotchi\\dados").mkdir();
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(caminho));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Tamagotchi.data"));
             tamagotchi = (TamagotchiBase) ois.readObject();
             tamagotchi.reiniciar();
             ois.close();
@@ -50,15 +48,15 @@ public class Entrada {
 
             if (!tamagotchi.getEstaVivo()) {
                 tamagotchi.getAnimacao().morto();
-                new File(caminho).delete();
+                new File("Tamagotchi.data").delete();
                 break;
             }
 
             if (opt == 0) {
                 tamagotchi.matar();
                 try {
-                    Thread.sleep(tamagotchi.RELOGIO_DA_ANIMACAO + tamagotchi.RELOGIO_DOS_STATUS);
-                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(caminho));
+                    Thread.sleep(tamagotchi.RELOGIO_DOS_STATUS);
+                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Tamagotchi.data"));
                     oos.writeObject(tamagotchi);
                     oos.close();
                     System.out.printf("\nTamagotchi Salvo com Sucesso.");
