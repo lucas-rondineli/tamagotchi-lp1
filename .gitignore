@@ -1,3 +1,7 @@
+# Virtual ambient files
+*.xml
+*.iml
+
 # Compiled class file
 *.class
 
