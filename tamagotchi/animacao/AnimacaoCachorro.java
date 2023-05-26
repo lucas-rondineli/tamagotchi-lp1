@@ -74,10 +74,8 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int numeroDeFrames = 2;
         int tempoDoFrame = Animacao.TEMPO_BRINCANDO / numeroDeFrames;
 
-        this.limpaTela();
         AtoPadrao.padrao1();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimação();
         
         this.limpaTela();
         AtoPadrao.padrao2();
