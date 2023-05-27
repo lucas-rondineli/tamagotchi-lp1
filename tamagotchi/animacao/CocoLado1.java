@@ -2,7 +2,6 @@ package tamagotchi.animacao;
 
 public class CocoLado1 {
     public static void coco1(){
-        System.out.println("\n\n\n\n\n\n\n\n");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -30,12 +29,8 @@ public class CocoLado1 {
                 "x.................................................................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
         public static void coco2(){
-        System.out.println("\n\n\n\n\n\n\n\n");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -61,9 +56,6 @@ public class CocoLado1 {
                 "x............................██.....██..██..........███████.......x\n" +
                 "x.....................................██..........................x");
         System.out.println("x.................................................................x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 }

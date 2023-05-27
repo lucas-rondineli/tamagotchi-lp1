@@ -28,9 +28,6 @@ public class Dormir {
                 "x......................███████████████████████....................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
     public static void dormir2() {
@@ -59,9 +56,6 @@ public class Dormir {
                 "x....................██.......................██..................x\n" +
                 "x......................███████████████████████....................x");
         System.out.println("x.................................................................x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
@@ -92,9 +86,6 @@ public class Dormir {
                 "x......................███████████████████████....................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
     public static void dormir4() {
@@ -123,9 +114,6 @@ public class Dormir {
                 "x....................██.......................██..................x\n" +
                 "x......................███████████████████████....................x");
         System.out.println("x.................................................................x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
@@ -157,9 +145,6 @@ public class Dormir {
                 "x......................███████████████████████....................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
 
@@ -189,9 +174,6 @@ public class Dormir {
                 "x....................██.......................██..................x\n" +
                 "x......................███████████████████████....................x");
         System.out.println("x.................................................................x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
@@ -223,9 +205,6 @@ public class Dormir {
                 "x......................███████████████████████....................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
 
@@ -256,9 +235,6 @@ public class Dormir {
                 "x......................███████████████████████....................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
     public static void dormir9() {
@@ -287,9 +263,6 @@ public class Dormir {
                 "x....................██.......................██..................x\n" +
                 "x......................███████████████████████....................x");
         System.out.println("x.................................................................x");
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0)Sair   x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 

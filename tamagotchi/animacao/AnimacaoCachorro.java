@@ -116,10 +116,6 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         Dormir.dormir9();
         cicloDeAnimacao();
 
-        this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO DORMINDO - Frame 2");
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
     }
 
     public void limpando() {
@@ -128,13 +124,10 @@ public class AnimacaoCachorro implements Animacao, Serializable {
 
         Coco.coco1();
         cicloDeAnimacao();
-
         Coco.coco2();
         cicloDeAnimacao();
-
         Coco.coco1();
         cicloDeAnimacao();
-
         Coco.coco2();
         cicloDeAnimacao();
 
@@ -157,10 +150,16 @@ public class AnimacaoCachorro implements Animacao, Serializable {
     }
 
     public void mostrarStatus() {
+
         System.out.printf("\nNome: %s\n", this.tamagotchi.getNome());
         System.out.printf("Fome: %d / %d\n", this.tamagotchi.getFome(), this.tamagotchi.FOME_MAXIMA);
         System.out.printf("Energia: %d / %d\n", this.tamagotchi.getEnergia(), this.tamagotchi.ENERGIA_MAXIMA);
         System.out.printf("Limpeza: %d / %d\n", this.tamagotchi.getLimpeza(), this.tamagotchi.LIMPEZA_MAXIMA);
+
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        System.out.println("x-----------------------------------------------------------------x");
+        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0) Sair  x");
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
     public void limpaTela() {
