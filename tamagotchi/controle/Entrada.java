@@ -73,10 +73,10 @@ public class Entrada {
                     tamagotchi.brincar();
                     break;
                 case 3:
-                    tamagotchi.dormir();
+                    tamagotchi.limpar();
                     break;
                 case 4:
-                    tamagotchi.limpar();
+                    tamagotchi.dormir();
             }
         }
     }
