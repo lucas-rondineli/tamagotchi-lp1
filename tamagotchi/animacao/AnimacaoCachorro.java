@@ -97,10 +97,24 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int numeroDeFrames = 2;
         int tempoDoFrame = Animacao.TEMPO_DORMINDO / numeroDeFrames;
 
-        this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO DORMINDO - Frame 1");
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        Dormir.dormir1();
+        cicloDeAnimacao();
+        Dormir.dormir2();
+        cicloDeAnimacao();
+        Dormir.dormir3();
+        cicloDeAnimacao();
+        Dormir.dormir4();
+        cicloDeAnimacao();
+        Dormir.dormir5();
+        cicloDeAnimacao();
+        Dormir.dormir6();
+        cicloDeAnimacao();
+        Dormir.dormir7();
+        cicloDeAnimacao();
+        Dormir.dormir8();
+        cicloDeAnimacao();
+        Dormir.dormir9();
+        cicloDeAnimacao();
 
         this.limpaTela();
         System.out.println("ASCII Art do CACHORRO DORMINDO - Frame 2");
@@ -112,15 +126,27 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int numeroDeFrames = 2;
         int tempoDoFrame = Animacao.TEMPO_LIMPANDO / numeroDeFrames;
 
-        this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO LIMPANDO - Frame 1");
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        Coco.coco1();
+        cicloDeAnimacao();
 
-        this.limpaTela();
-        System.out.println("ASCII Art do CACHORRO LIMPANDO - Frame 2");
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        Coco.coco2();
+        cicloDeAnimacao();
+
+        Coco.coco1();
+        cicloDeAnimacao();
+
+        Coco.coco2();
+        cicloDeAnimacao();
+
+        Limpeza.limpar1();
+        cicloDeAnimacao();
+        Limpeza.limpar2();
+        cicloDeAnimacao();
+        Limpeza.limpar3();
+        cicloDeAnimacao();
+        Limpeza.limpar4();
+        cicloDeAnimacao();
+
     }
 
     public void morto() {
