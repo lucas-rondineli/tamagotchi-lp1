@@ -22,9 +22,9 @@ public class Entrada {
             ois.close();
         } catch (Exception e) {
             String nome = vd.validateString("Por favor, entre com o nome do seu Tamagotchi: ",
-                    "Erro. Um nome vazio não é válido.\n\n",
+                    "Erro. Um nome vazio, ou com mais de 10 caracteres, não é válido.\n\n",
                     (n) -> {
-                        return n.length() > 0;
+                        return 0 < n.length() && n.length() <= 10;
                     });
             opt = vd.validateInt("\nEscolha um tipo de Tamagotchi.\n1 - Cachorro\n2 - Gato\n",
                     "Erro. Digite um número entre 1 e 2.\n\n",

@@ -140,7 +140,7 @@ public class AnimacaoCachorro implements Animacao, Serializable {
     public void morto() {
         this.limpaTela();
         GameOver.gameover();
-        System.out.printf("┼┼┼┼┼┼┼ SEU %s MORREU ┼┼┼┼┼┼%n", this.tamagotchi.getNome());
+        System.out.printf("┼┼┼┼┼┼┼ SEU %10s MORREU ┼┼┼┼┼┼%n", this.tamagotchi.getNome());
         System.out.println("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
     }
 
