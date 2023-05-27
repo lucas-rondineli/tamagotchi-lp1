@@ -19,19 +19,17 @@ public class AnimacaoCachorro implements Animacao, Serializable {
 
         this.limpaTela();
         AtoPadrao.padrao1();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
-        
-        this.limpaTela();
+        cicloDeAnimacao();
+
         AtoPadrao.padrao2();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimacao();
     }
 
     public void comendo() {
         int numeroDeFrames = 2;
         int tempoDoFrame = Animacao.TEMPO_COMENDO / numeroDeFrames;
 
+        this.limpaTela();
         AnimacaoMaca.maca1();
         cicloDeAnimacao();
 
@@ -74,29 +72,25 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int numeroDeFrames = 2;
         int tempoDoFrame = Animacao.TEMPO_BRINCANDO / numeroDeFrames;
 
+        this.limpaTela();
         AtoPadrao.padrao1();
         cicloDeAnimacao();
         
         this.limpaTela();
         AtoPadrao.padrao2();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimacao();
 
-        this.limpaTela();
         Desconfiado.brabo1();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
-        
-        this.limpaTela();
+        cicloDeAnimacao();
         Desconfiado.brabo2();
-        this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        cicloDeAnimacao();
     }
 
     public void dormindo() {
         int numeroDeFrames = 2;
         int tempoDoFrame = Animacao.TEMPO_DORMINDO / numeroDeFrames;
 
+        this.limpaTela();
         Dormir.dormir1();
         cicloDeAnimacao();
         Dormir.dormir2();
@@ -122,6 +116,7 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         int numeroDeFrames = 2;
         int tempoDoFrame = Animacao.TEMPO_LIMPANDO / numeroDeFrames;
 
+        this.limpaTela();
         Coco.coco1();
         cicloDeAnimacao();
         Coco.coco2();

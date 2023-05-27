@@ -61,7 +61,6 @@ public class Limpeza {
     }
 
     public static void limpar3() {
-        System.out.println("\n\n\n\n\n\n\n\n");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
