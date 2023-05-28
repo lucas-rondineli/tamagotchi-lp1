@@ -1,6 +1,6 @@
 package tamagotchi.animacao.sapinho;
 
-public class Coco {
+public class SapoCoco {
     public static void comer1(){
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +

@@ -2,8 +2,7 @@ package tamagotchi.animacao.mametchi;
 
 import tamagotchi.animacao.Animacao;
 import tamagotchi.animacao.AnimacaoMaca;
-import tamagotchi.animacao.GameOver;
-import tamagotchi.animacao.mametchi.*;
+import tamagotchi.animacao.AnimacaoMorrer;
 import tamagotchi.criatura.TamagotchiBase;
 import java.io.Serializable;
 
@@ -133,9 +132,17 @@ public class AnimacaoCachorro implements Animacao, Serializable {
 
     public void morto() {
         this.limpaTela();
-        GameOver.gameover();
-        System.out.printf("┼┼┼┼┼┼┼ SEU %10s MORREU ┼┼┼┼┼┼%n", this.tamagotchi.getNome());
-        System.out.println("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
+        AnimacaoMorrer.morrer1();
+        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
+        AnimacaoMorrer.morrer2();
+        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
+        AnimacaoMorrer.morrer1();
+        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
+        AnimacaoMorrer.morrer2();
+        System.out.println("x-----------------------------------------------------------------x");
+        System.out.printf( "                         SEU %s MORREU                           \n" +
+                "", this.tamagotchi.getNome().toUpperCase());
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
     public void mostrarStatus() {
@@ -145,7 +152,7 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         System.out.printf("Energia: %d / %d\n", this.tamagotchi.getEnergia(), this.tamagotchi.ENERGIA_MAXIMA);
         System.out.printf("Limpeza: %d / %d\n", this.tamagotchi.getLimpeza(), this.tamagotchi.LIMPEZA_MAXIMA);
 
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        System.out.println("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x-----------------------------------------------------------------x");
         System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0) Sair  x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
