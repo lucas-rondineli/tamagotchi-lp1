@@ -1,4 +1,4 @@
-package tamagotchi.animacao;
+package tamagotchi.animacao.mametchi;
 
 public class Dormir {
     public static void dormir1() {

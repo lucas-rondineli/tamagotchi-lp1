@@ -1,5 +1,9 @@
-package tamagotchi.animacao;
+package tamagotchi.animacao.mametchi;
 
+import tamagotchi.animacao.Animacao;
+import tamagotchi.animacao.AnimacaoMaca;
+import tamagotchi.animacao.GameOver;
+import tamagotchi.animacao.mametchi.*;
 import tamagotchi.criatura.TamagotchiBase;
 import java.io.Serializable;
 
@@ -14,76 +18,68 @@ public class AnimacaoCachorro implements Animacao, Serializable {
 
     // Métodos
     public void parado() {
-        int numeroDeFrames = 2;
-        int tempoDoFrame = Animacao.TEMPO_PARADO / numeroDeFrames;
-
         this.limpaTela();
-        AtoPadrao.padrao1();
-        cicloDeAnimacao();
+        Padrao.padrao1();
+        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
 
-        AtoPadrao.padrao2();
-        cicloDeAnimacao();
+        Padrao.padrao2();
+        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
     }
 
     public void comendo() {
-        int numeroDeFrames = 2;
-        int tempoDoFrame = Animacao.TEMPO_COMENDO / numeroDeFrames;
-
         this.limpaTela();
         AnimacaoMaca.maca1();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
         AnimacaoMaca.maca2();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
         AnimacaoMaca.maca3();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
         AnimacaoMaca.maca4();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
         AnimacaoMaca.maca5();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
         AnimacaoMaca.maca6();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
-        AtoComer1.atoComer1();
-        cicloDeAnimacao();
+        Comer.atoComer1();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
-        AtoComer1.atoComer2();
-        cicloDeAnimacao();
+        Comer.atoComer2();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
-        AtoComer1.atoComer3();
-       cicloDeAnimacao();
+        Comer.atoComer3();
+       cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
-        AtoComer1.atoComer4();
-        cicloDeAnimacao();
+        Comer.atoComer4();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
 
-        AtoComer1.atoComer5();
-        cicloDeAnimacao();
+        Comer.atoComer5();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
         
-        AtoComer1.atoComer6();
-        cicloDeAnimacao();
+        Comer.atoComer6();
+        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 12);
         
     }
 
     public void brincando() {
-        int numeroDeFrames = 2;
-        int tempoDoFrame = Animacao.TEMPO_BRINCANDO / numeroDeFrames;
-
         this.limpaTela();
-        AtoPadrao.padrao1();
-        cicloDeAnimacao();
+        Padrao.padrao1();
+        cicloDeAnimacao(Animacao.TEMPO_BRINCANDO, 4);
         
         this.limpaTela();
-        AtoPadrao.padrao2();
-        cicloDeAnimacao();
+        Padrao.padrao2();
+        cicloDeAnimacao(Animacao.TEMPO_BRINCANDO, 4);
 
         Desconfiado.brabo1();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_BRINCANDO, 4);
+
         Desconfiado.brabo2();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_BRINCANDO, 4);
     }
 
     public void dormindo() {
@@ -92,48 +88,46 @@ public class AnimacaoCachorro implements Animacao, Serializable {
 
         this.limpaTela();
         Dormir.dormir1();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
         Dormir.dormir2();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
         Dormir.dormir3();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
         Dormir.dormir4();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
         Dormir.dormir5();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
         Dormir.dormir6();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
         Dormir.dormir7();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
         Dormir.dormir8();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
         Dormir.dormir9();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
 
     }
 
     public void limpando() {
-        int numeroDeFrames = 2;
-        int tempoDoFrame = Animacao.TEMPO_LIMPANDO / numeroDeFrames;
 
         this.limpaTela();
         Coco.coco1();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
         Coco.coco2();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
         Coco.coco1();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
         Coco.coco2();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
 
         Limpeza.limpar1();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
         Limpeza.limpar2();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
         Limpeza.limpar3();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
         Limpeza.limpar4();
-        cicloDeAnimacao();
+        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
 
     }
 
@@ -169,11 +163,9 @@ public class AnimacaoCachorro implements Animacao, Serializable {
         }
     }
 
-    public void cicloDeAnimacao(){
-        int numeroDeFrames = 2;
-        int tempoDoFrame = Animacao.TEMPO_COMENDO / numeroDeFrames;
+    public void cicloDeAnimacao(int tempo, int numeroDeFrames){
         this.mostrarStatus();
-        this.esperar(tempoDoFrame);
+        this.esperar(tempo/numeroDeFrames);
         this.limpaTela();
     }
 }

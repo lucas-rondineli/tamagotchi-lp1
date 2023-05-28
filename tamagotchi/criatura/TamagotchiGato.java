@@ -1,6 +1,6 @@
 package tamagotchi.criatura;
 
-import tamagotchi.animacao.AnimacaoGato;
+import tamagotchi.animacao.sapinho.AnimacaoGato;
 
 public class TamagotchiGato extends TamagotchiBase {
     public TamagotchiGato(String nome) {

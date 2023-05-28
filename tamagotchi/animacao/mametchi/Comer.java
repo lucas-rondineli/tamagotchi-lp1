@@ -1,6 +1,6 @@
-package tamagotchi.animacao;
+package tamagotchi.animacao.mametchi;
 
-public class AtoComer1 {
+public class Comer {
     public static void atoComer1(){
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +

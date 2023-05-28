@@ -1,4 +1,4 @@
-package tamagotchi.animacao;
+package tamagotchi.animacao.mametchi;
 
 public class Limpeza {
     public static void limpar1() {
@@ -117,5 +117,6 @@ public class Limpeza {
                 "x..........................██..██..██..██.........................x\n" +
                 "x............................██......██...........................x");
         System.out.println("x.................................................................x");
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 }
