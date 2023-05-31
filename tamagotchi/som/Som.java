@@ -7,90 +7,64 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public class Som {
-    private Clip clp;
-    private AudioInputStream botao;
-    private AudioInputStream comer;
-    private AudioInputStream brincar;
-    private AudioInputStream limpar;
-    private AudioInputStream dormir;
-    private AudioInputStream morrer;
+    private Clip botao;
+    private Clip comer;
+    private Clip brincar;
+    private Clip limpar;
+    private Clip dormir;
+    private Clip morrer;
 
     public Som() {
         String caminhoSonsDb = FolderFinder.findAbsolutePath(System.getProperty("user.dir"), "sonsDB") + '\\';
 
         try {
-            this.clp = AudioSystem.getClip();
+            this.botao = AudioSystem.getClip();
+            this.comer = AudioSystem.getClip();
+            this.brincar = AudioSystem.getClip();
+            this.limpar = AudioSystem.getClip();
+            this.dormir = AudioSystem.getClip();
+            this.morrer = AudioSystem.getClip();
         } catch (Exception e) {
         }
 
         try {
-            this.botao = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "01.wav"));
-            this.comer = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "09.wav"));
-            this.brincar = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "08.wav"));
-            this.limpar = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "19.wav"));
-            this.dormir = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "04.wav"));
-            this.morrer = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "03.wav"));
+            this.botao.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "01.wav")));
+            this.comer.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "09.wav")));
+            this.brincar.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "08.wav")));
+            this.limpar.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "19.wav")));
+            this.dormir.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "04.wav")));
+            this.morrer.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "03.wav")));
         } catch (Exception e) {
         }
     }
 
     public void botao() {
-        try {
-            this.clp.close();
-            this.clp.open(this.botao);
-        } catch (Exception e) {
-        }
-        this.clp.setMicrosecondPosition(0);
-        this.clp.start();
+        this.botao.setMicrosecondPosition(0);
+        this.botao.start();
     }
 
     public void comer() {
-        try {
-            this.clp.close();
-            this.clp.open(this.comer);
-        } catch (Exception e) {
-        }
-        this.clp.setMicrosecondPosition(0);
-        this.clp.start();
+        this.comer.setMicrosecondPosition(0);
+        this.comer.start();
     }
 
     public void brincar() {
-        try {
-            this.clp.close();
-            this.clp.open(this.brincar);
-        } catch (Exception e) {
-        }
-        this.clp.setMicrosecondPosition(0);
-        this.clp.start();
+        this.brincar.setMicrosecondPosition(0);
+        this.brincar.start();
     }
 
     public void limpar() {
-        try {
-            this.clp.close();
-            this.clp.open(this.limpar);
-        } catch (Exception e) {
-        }
-        this.clp.setMicrosecondPosition(0);
-        this.clp.start();
+        this.limpar.setMicrosecondPosition(0);
+        this.limpar.start();
     }
 
     public void dormir() {
-        try {
-            this.clp.close();
-            this.clp.open(this.dormir);
-        } catch (Exception e) {
-        }
-        this.clp.setMicrosecondPosition(0);
-        this.clp.start();
+        this.dormir.setMicrosecondPosition(0);
+        this.dormir.start();
     }
 
     public void morrer() {
-        try {
-            this.clp.close();
-            this.clp.open(this.morrer);
-        } catch (Exception e) {
-        }
-        this.clp.setMicrosecondPosition(0);
-        this.clp.start();
+        this.morrer.setMicrosecondPosition(0);
+        this.morrer.start();
     }
 }
