@@ -27,13 +27,31 @@ public class Som {
         } catch (Exception e) {
         }
 
+        AudioInputStream tmp;
         try {
-            this.botao.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "01.wav")));
-            this.comer.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "09.wav")));
-            this.brincar.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "08.wav")));
-            this.limpar.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "19.wav")));
-            this.dormir.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "04.wav")));
-            this.morrer.open(AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "03.wav")));
+            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "01.wav"));
+            this.botao.open(tmp);
+            tmp.close();
+
+            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "09.wav"));
+            this.comer.open(tmp);
+            tmp.close();
+
+            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "08.wav"));
+            this.brincar.open(tmp);
+            tmp.close();
+
+            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "19.wav"));
+            this.limpar.open(tmp);
+            tmp.close();
+
+            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "04.wav"));
+            this.dormir.open(tmp);
+            tmp.close();
+
+            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "03.wav"));
+            this.morrer.open(tmp);
+            tmp.close();
         } catch (Exception e) {
         }
     }
