@@ -15,7 +15,7 @@ public class Som {
     private Clip morrer;
 
     public Som() {
-        String caminhoSonsDb = FolderFinder.findAbsolutePath(System.getProperty("user.dir"), "sonsDB") + '\\';
+        String caminhoSonsDb = FolderFinder.findAbsolutePath(System.getProperty("user.dir"), "tamagotchi") + "\\som\\sonsDB\\";
 
         try {
             this.botao = AudioSystem.getClip();
