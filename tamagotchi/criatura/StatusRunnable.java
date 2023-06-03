@@ -14,7 +14,8 @@ class StatusRunnable implements Runnable {
         while (this.tamagotchi.getEstaVivo()) {
             if (this.tamagotchi.getFome() >= this.tamagotchi.FOME_MAXIMA
                     || this.tamagotchi.getEnergia() <= this.tamagotchi.ENERGIA_MINIMA
-                    || this.tamagotchi.getLimpeza() <= this.tamagotchi.LIMPEZA_MINIMA)
+                    || this.tamagotchi.getLimpeza() <= this.tamagotchi.LIMPEZA_MINIMA
+                    || this.tamagotchi.getFelicidade() <= this.tamagotchi.FELICIDADE_MINIMA)
                 this.tamagotchi.matar();
             else {
                 this.tamagotchi.cicloDosStatus();

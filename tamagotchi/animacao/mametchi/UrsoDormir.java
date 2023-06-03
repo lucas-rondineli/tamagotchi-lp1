@@ -1,6 +1,6 @@
 package tamagotchi.animacao.mametchi;
 
-public class Dormir {
+public class UrsoDormir {
     public static void dormir1() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +

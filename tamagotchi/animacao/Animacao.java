@@ -3,7 +3,7 @@ package tamagotchi.animacao;
 public interface Animacao {
     // Constantes
     public int TEMPO_PARADO = 1000;
-    public int TEMPO_COMENDO = 6000;
+    public int TEMPO_COMENDO = 4500;
     public int TEMPO_BRINCANDO = 2000;
     public int TEMPO_DORMINDO = 4500;
     public int TEMPO_LIMPANDO = 4000;

@@ -1,7 +1,7 @@
 package tamagotchi.animacao.sapinho;
 
 public class SapoCoco {
-    public static void comer1(){
+    public static void coco1(){
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +

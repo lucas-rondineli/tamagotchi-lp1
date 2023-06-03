@@ -1,6 +1,6 @@
 package tamagotchi.animacao.mametchi;
 
-public class Limpeza {
+public class UrsoLimpeza {
     public static void limpar1() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +

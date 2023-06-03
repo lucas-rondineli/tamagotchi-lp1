@@ -1,6 +1,7 @@
 package tamagotchi.controle;
 
 import tamagotchi.criatura.*;
+import tamagotchi.som.Som;
 import tools.Validator;
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,6 +13,7 @@ public class Entrada {
     public static void main(String[] args) {
         Validator vd = new Validator(System.in);
         TamagotchiBase tamagotchi;
+        Som som = new Som();
         int opt;
 
         // Criando um Tamagotchi novo ou recuperando-o da memória
@@ -33,9 +35,9 @@ public class Entrada {
                     });
 
             if (opt == 1)
-                tamagotchi = new TamagotchiCachorro(nome);
+                tamagotchi = new TamagotchiUrso(nome);
             else
-                tamagotchi = new TamagotchiGato(nome);
+                tamagotchi = new TamagotchiSapo(nome);
         }
 
         // Iniciando o Tamagotchi e recebendo as entradas do usuário

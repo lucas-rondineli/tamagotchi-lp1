@@ -1,7 +1,7 @@
 package tamagotchi.animacao.mametchi;
 
 
-        public class Desconfiado {
+        public class UrsoBrincar {
             public static void brabo1(){
                 System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
                 System.out.println("x     _                                    _       _     _        x\n" +

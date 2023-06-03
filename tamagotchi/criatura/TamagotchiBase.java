@@ -9,6 +9,8 @@ public abstract class TamagotchiBase implements Serializable {
     public final int RELOGIO_DOS_STATUS = 500;
     public final int FOME_MINIMA = 0;
     public final int FOME_MAXIMA = 100;
+    public final int FELICIDADE_MINIMA = 0;
+    public final int FELICIDADE_MAXIMA = 100;
     public final int ENERGIA_MINIMA = 0;
     public final int ENERGIA_MAXIMA = 100;
     public final int LIMPEZA_MINIMA = 0;
@@ -22,6 +24,7 @@ public abstract class TamagotchiBase implements Serializable {
     // Atributos
     protected String nome;
     protected int fome;
+    protected int felicidade;
     protected int energia;
     protected int limpeza;
     protected boolean estaVivo;
@@ -35,6 +38,7 @@ public abstract class TamagotchiBase implements Serializable {
     public TamagotchiBase(String nome) {
         this.setNome(nome);
         this.fome = this.FOME_MINIMA;
+        this.felicidade = this.FELICIDADE_MAXIMA;
         this.energia = this.ENERGIA_MAXIMA;
         this.limpeza = this.LIMPEZA_MAXIMA;
         this.estaVivo = true;
@@ -48,6 +52,10 @@ public abstract class TamagotchiBase implements Serializable {
 
     public int getFome() {
         return this.fome;
+    }
+
+    public int getFelicidade() {
+        return this.felicidade;
     }
 
     public int getEnergia() {
@@ -92,6 +100,7 @@ public abstract class TamagotchiBase implements Serializable {
 
     public void cicloDosStatus() {
         this.fome++;
+        this.felicidade--;
         this.energia--;
         this.limpeza--;
     }
@@ -104,6 +113,7 @@ public abstract class TamagotchiBase implements Serializable {
 
     public void brincar() {
         this.setEstadoAtual(this.BRINCANDO);
+        this.felicidade = this.FELICIDADE_MAXIMA;
         this.resetarEstado(Animacao.TEMPO_BRINCANDO);
     }
 
