@@ -9,12 +9,16 @@ public abstract class TamagotchiBase implements Serializable {
     public final int RELOGIO_DOS_STATUS = 500;
     public final int FOME_MINIMA = 0;
     public final int FOME_MAXIMA = 100;
+    public final double FOME_ALERTA = (FOME_MAXIMA - FOME_MINIMA) * 0.7;
     public final int FELICIDADE_MINIMA = 0;
     public final int FELICIDADE_MAXIMA = 100;
+    public final double FELICIDADE_ALERTA = (FELICIDADE_MAXIMA - FELICIDADE_MINIMA) * 0.3;
     public final int ENERGIA_MINIMA = 0;
     public final int ENERGIA_MAXIMA = 100;
+    public final double ENERGIA_ALERTA = (ENERGIA_MAXIMA - ENERGIA_MINIMA) * 0.3;
     public final int LIMPEZA_MINIMA = 0;
     public final int LIMPEZA_MAXIMA = 100;
+    public final double LIMPEZA_ALERTA = (LIMPEZA_MAXIMA - LIMPEZA_MINIMA) * 0.3;
     public final int PARADO = 0;
     public final int COMENDO = 1;
     public final int BRINCANDO = 2;
@@ -78,16 +82,23 @@ public abstract class TamagotchiBase implements Serializable {
         return this.anm;
     }
 
+    public Thread getControladorDaAnimacao() {
+        return this.controladorDaAnimacao;
+    }
+
+    public boolean getPerigo() {
+        return this.getFome() > this.FOME_ALERTA ||
+                this.getFelicidade() < this.FELICIDADE_ALERTA ||
+                this.getEnergia() < this.ENERGIA_ALERTA ||
+                this.getLimpeza() < this.LIMPEZA_ALERTA;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
 
     protected void setAnimacao(IAnimacao anm) {
         this.anm = anm;
-    }
-
-    public Thread getControladorDaAnimacao() {
-        return this.controladorDaAnimacao;
     }
 
     protected void setEstadoAtual(int estado) {

@@ -21,6 +21,8 @@ public class AnimacaoUrso implements IAnimacao, Serializable {
     public void parado() {
         int tempoDoFrame = IAnimacao.TEMPO_PARADO / 2;
 
+        if (this.tamagotchi.getPerigo())
+            this.som.alerta();
         this.limpaTela();
         UrsoPadrao.padrao1();
         cicloDeAnimacao(tempoDoFrame);
@@ -147,19 +149,21 @@ public class AnimacaoUrso implements IAnimacao, Serializable {
 
         this.limpaTela();
         AnimacaoMorrer.morrer1();
-        cicloDeAnimacao(tempoDoFrame);
+        this.esperar(tempoDoFrame);
+        this.limpaTela();
         som.morrer();
 
         AnimacaoMorrer.morrer2();
-        cicloDeAnimacao(tempoDoFrame);
-        som.morrer();
+        this.esperar(tempoDoFrame);
+        this.limpaTela();
 
         AnimacaoMorrer.morrer1();
-        cicloDeAnimacao(tempoDoFrame);
+        this.esperar(tempoDoFrame);
+        this.limpaTela();
 
         AnimacaoMorrer.morrer2();
         System.out.println("x-----------------------------------------------------------------x");
-        System.out.printf("                         SEU %s MORREU                           \n" +
+        System.out.printf("x                        SEU %s MORREU                          x\n" +
                 "", this.tamagotchi.getNome().toUpperCase());
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }

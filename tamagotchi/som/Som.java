@@ -7,7 +7,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public class Som {
-    private Clip botao;
+    private Clip alerta;
     private Clip comer;
     private Clip brincar;
     private Clip limpar;
@@ -19,7 +19,7 @@ public class Som {
                 + "\\som\\sonsDB\\";
 
         try {
-            this.botao = AudioSystem.getClip();
+            this.alerta = AudioSystem.getClip();
             this.comer = AudioSystem.getClip();
             this.brincar = AudioSystem.getClip();
             this.limpar = AudioSystem.getClip();
@@ -30,8 +30,8 @@ public class Som {
 
         AudioInputStream tmp;
         try {
-            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "01.wav"));
-            this.botao.open(tmp);
+            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "17.wav"));
+            this.alerta.open(tmp);
             tmp.close();
 
             tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "09.wav"));
@@ -57,9 +57,9 @@ public class Som {
         }
     }
 
-    public void botao() {
-        this.botao.setMicrosecondPosition(0);
-        this.botao.start();
+    public void alerta() {
+        this.alerta.setMicrosecondPosition(0);
+        this.alerta.start();
     }
 
     public void comer() {
