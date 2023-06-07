@@ -1,17 +1,16 @@
 package tamagotchi.animacao.mametchi;
 
-import tamagotchi.animacao.Animacao;
+import tamagotchi.animacao.IAnimacao;
 import tamagotchi.animacao.AnimacaoMaca;
 import tamagotchi.animacao.AnimacaoMorrer;
 import tamagotchi.criatura.TamagotchiBase;
 import tamagotchi.som.Som;
-
 import java.io.Serializable;
 
-public class AnimacaoUrso implements Animacao, Serializable {
-    Som som = new Som();
+public class AnimacaoUrso implements IAnimacao, Serializable {
     // Atributos
     private TamagotchiBase tamagotchi;
+    transient private Som som = new Som();
 
     // Construtor
     public AnimacaoUrso(TamagotchiBase tamagotchi) {
@@ -20,131 +19,152 @@ public class AnimacaoUrso implements Animacao, Serializable {
 
     // Métodos
     public void parado() {
+        int tempoDoFrame = IAnimacao.TEMPO_PARADO / 2;
+
         this.limpaTela();
         UrsoPadrao.padrao1();
-        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
+        cicloDeAnimacao(tempoDoFrame);
 
         UrsoPadrao.padrao2();
-        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
+        cicloDeAnimacao(tempoDoFrame);
     }
 
     public void comendo() {
+        int tempoDoFrame = IAnimacao.TEMPO_COMENDO / 9;
+
         this.limpaTela();
         AnimacaoMaca.maca1();
-        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 9);
+        cicloDeAnimacao(tempoDoFrame);
 
         AnimacaoMaca.maca3();
-        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 9);
+        cicloDeAnimacao(tempoDoFrame);
 
         AnimacaoMaca.maca5();
-        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 9);
+        cicloDeAnimacao(tempoDoFrame);
 
         UrsoComer.atoComer1();
-        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 9);
-
+        cicloDeAnimacao(tempoDoFrame);
         som.comer();
+
         UrsoComer.atoComer2();
-        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 9);
+        cicloDeAnimacao(tempoDoFrame);
 
         UrsoComer.atoComer3();
-        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 9);
-
+        cicloDeAnimacao(tempoDoFrame);
         som.comer();
+
         UrsoComer.atoComer4();
-        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 9);
+        cicloDeAnimacao(tempoDoFrame);
 
         UrsoComer.atoComer5();
-        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 9);
-
+        cicloDeAnimacao(tempoDoFrame);
         som.comer();
+
         UrsoComer.atoComer6();
-        cicloDeAnimacao(Animacao.TEMPO_COMENDO, 9);
+        cicloDeAnimacao(tempoDoFrame);
     }
 
     public void brincando() {
+        int tempoDoFrame = IAnimacao.TEMPO_BRINCANDO / 4;
+
         this.limpaTela();
         UrsoBrincar.brabo1();
-        cicloDeAnimacao(Animacao.TEMPO_BRINCANDO, 4);
-
+        cicloDeAnimacao(tempoDoFrame);
         som.brincar();
+
         UrsoBrincar.brabo2();
-        cicloDeAnimacao(Animacao.TEMPO_BRINCANDO, 4);
+        cicloDeAnimacao(tempoDoFrame);
 
         UrsoBrincar.brabo1();
-        cicloDeAnimacao(Animacao.TEMPO_BRINCANDO, 4);
-
+        cicloDeAnimacao(tempoDoFrame);
         som.brincar();
+
         UrsoBrincar.brabo2();
-        cicloDeAnimacao(Animacao.TEMPO_BRINCANDO, 4);
+        cicloDeAnimacao(tempoDoFrame);
     }
 
     public void dormindo() {
+        int tempoDoFrame = IAnimacao.TEMPO_DORMINDO / 9;
 
         this.limpaTela();
-        som.dormir();
-
         UrsoDormir.dormir1();
-        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
-        UrsoDormir.dormir2();
-        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
-        UrsoDormir.dormir3();
+        cicloDeAnimacao(tempoDoFrame);
         som.dormir();
-        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
-        UrsoDormir.dormir4();
-        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
-        UrsoDormir.dormir5();
-        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
-        UrsoDormir.dormir6();
-        som.dormir();
-        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
-        UrsoDormir.dormir7();
-        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
-        UrsoDormir.dormir8();
-        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
-        UrsoDormir.dormir9();
-        cicloDeAnimacao(Animacao.TEMPO_DORMINDO, 9);
 
+        UrsoDormir.dormir2();
+        cicloDeAnimacao(tempoDoFrame);
+
+        UrsoDormir.dormir3();
+        cicloDeAnimacao(tempoDoFrame);
+        som.dormir();
+
+        UrsoDormir.dormir4();
+        cicloDeAnimacao(tempoDoFrame);
+
+        UrsoDormir.dormir5();
+        cicloDeAnimacao(tempoDoFrame);
+
+        UrsoDormir.dormir6();
+        cicloDeAnimacao(tempoDoFrame);
+        som.dormir();
+
+        UrsoDormir.dormir7();
+        cicloDeAnimacao(tempoDoFrame);
+
+        UrsoDormir.dormir8();
+        cicloDeAnimacao(tempoDoFrame);
+
+        UrsoDormir.dormir9();
+        cicloDeAnimacao(tempoDoFrame);
     }
 
     public void limpando() {
+        int tempoDoFrame = IAnimacao.TEMPO_LIMPANDO / 6;
 
         this.limpaTela();
-        som.limpar();
         UrsoCoco.coco1();
-        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
+        cicloDeAnimacao(tempoDoFrame);
+        som.limpar();
+
         UrsoCoco.coco2();
-        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
+        cicloDeAnimacao(tempoDoFrame);
 
         UrsoLimpeza.limpar1();
-        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
-        UrsoLimpeza.limpar2();
-        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
-        UrsoLimpeza.limpar3();
-        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
-        UrsoLimpeza.limpar4();
-        cicloDeAnimacao(Animacao.TEMPO_LIMPANDO, 8);
+        cicloDeAnimacao(tempoDoFrame);
 
+        UrsoLimpeza.limpar2();
+        cicloDeAnimacao(tempoDoFrame);
+
+        UrsoLimpeza.limpar3();
+        cicloDeAnimacao(tempoDoFrame);
+
+        UrsoLimpeza.limpar4();
+        cicloDeAnimacao(tempoDoFrame);
     }
 
     public void morto() {
+        int tempoDoFrame = 500;
+
         this.limpaTela();
-        som.morrer();
         AnimacaoMorrer.morrer1();
-        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
+        cicloDeAnimacao(tempoDoFrame);
+        som.morrer();
+
         AnimacaoMorrer.morrer2();
+        cicloDeAnimacao(tempoDoFrame);
         som.morrer();
-        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
+
         AnimacaoMorrer.morrer1();
-        cicloDeAnimacao(Animacao.TEMPO_PARADO, 2);
+        cicloDeAnimacao(tempoDoFrame);
+
         AnimacaoMorrer.morrer2();
         System.out.println("x-----------------------------------------------------------------x");
-        System.out.printf( "                         SEU %s MORREU                           \n" +
+        System.out.printf("                         SEU %s MORREU                           \n" +
                 "", this.tamagotchi.getNome().toUpperCase());
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
     public void mostrarStatus() {
-
         System.out.printf("\nNome: %s\n", this.tamagotchi.getNome());
         System.out.printf("Fome: %d / %d\n", this.tamagotchi.getFome(), this.tamagotchi.FOME_MAXIMA);
         System.out.printf("Felicidade: %d / %d\n", this.tamagotchi.getFelicidade(), this.tamagotchi.FELICIDADE_MAXIMA);
@@ -153,7 +173,7 @@ public class AnimacaoUrso implements Animacao, Serializable {
 
         System.out.println("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x-----------------------------------------------------------------x");
-        System.out.println("x  1) Alimentar    2) Brincar   3)Banheiro     4)Dormir  0) Sair  x");
+        System.out.println("x 1) Alimentar    2) Brincar   3) Banheiro     4) Dormir  0) Sair x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
@@ -169,9 +189,13 @@ public class AnimacaoUrso implements Animacao, Serializable {
         }
     }
 
-    public void cicloDeAnimacao(int tempo, int numeroDeFrames){
+    public void cicloDeAnimacao(int tempoDoCiclo) {
         this.mostrarStatus();
-        this.esperar(tempo/numeroDeFrames);
+        this.esperar(tempoDoCiclo);
         this.limpaTela();
+    }
+
+    public void reiniciarSom() {
+        this.som = new Som();
     }
 }

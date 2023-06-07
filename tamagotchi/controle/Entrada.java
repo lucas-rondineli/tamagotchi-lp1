@@ -1,8 +1,8 @@
 package tamagotchi.controle;
 
 import tamagotchi.criatura.*;
-import tamagotchi.som.Som;
 import tools.Validator;
+import tools.FolderFinder;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,12 +13,15 @@ public class Entrada {
     public static void main(String[] args) {
         Validator vd = new Validator(System.in);
         TamagotchiBase tamagotchi;
-        Som som = new Som();
+        String caminhoDosDados = FolderFinder.findAbsolutePath(System.getProperty("user.dir"), "tamagotchi")
+                + "\\dados";
         int opt;
 
         // Criando um Tamagotchi novo ou recuperando-o da memória
+        new File(caminhoDosDados).mkdir();
+        caminhoDosDados += "\\Tamagotchi.data";
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Tamagotchi.data"));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(caminhoDosDados));
             tamagotchi = (TamagotchiBase) ois.readObject();
             tamagotchi.reiniciar();
             ois.close();
@@ -28,7 +31,7 @@ public class Entrada {
                     (n) -> {
                         return 0 < n.length() && n.length() <= 10;
                     });
-            opt = vd.validateInt("\nEscolha um tipo de Tamagotchi.\n1 - Cachorro\n2 - Gato\n",
+            opt = vd.validateInt("\nEscolha um tipo de Tamagotchi.\n1 - Ursinho\n2 - Sapinho\n",
                     "Erro. Digite um número entre 1 e 2.\n\n",
                     (n) -> {
                         return n == 1 || n == 2;
@@ -50,7 +53,7 @@ public class Entrada {
 
             if (!tamagotchi.getEstaVivo()) {
                 tamagotchi.getAnimacao().morto();
-                new File("Tamagotchi.data").delete();
+                new File(caminhoDosDados).delete();
                 break;
             }
 
@@ -58,11 +61,12 @@ public class Entrada {
                 tamagotchi.matar();
                 try {
                     Thread.sleep(tamagotchi.RELOGIO_DOS_STATUS);
-                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Tamagotchi.data"));
+                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(caminhoDosDados));
                     oos.writeObject(tamagotchi);
                     oos.close();
-                    System.out.printf("\nTamagotchi Salvo com Sucesso.");
+                    System.out.printf("Tamagotchi Salvo com Sucesso.");
                 } catch (Exception e) {
+                    System.out.println(e);
                 }
                 break;
             }
