@@ -116,5 +116,4 @@ public class SapoLimpar {
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
-
 }

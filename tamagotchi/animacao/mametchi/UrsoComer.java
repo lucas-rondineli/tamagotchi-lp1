@@ -1,7 +1,7 @@
 package tamagotchi.animacao.mametchi;
 
 public class UrsoComer {
-    public static void atoComer1(){
+    public static void atoComer1() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -24,14 +24,14 @@ public class UrsoComer {
                 "x......................██...........█..█....██....................x\n" +
                 "x......................██............██.....██....................x\n" +
                 "x........................██..............██.......................x\n" +
-                "x..........................██..██████..██.........................x\n"+
+                "x..........................██..██████..██.........................x\n" +
                 "x..........................██..██..██..██.........................x\n" +
                 "x............................██......██...........................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
-        public static void atoComer2(){
+    public static void atoComer2() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -54,14 +54,14 @@ public class UrsoComer {
                 "x......................██...........█..█.......██.................x\n" +
                 "x......................██............██........██.................x\n" +
                 "x........................██..................██...................x\n" +
-                "x..........................██..██████..██████.....................x\n"+
+                "x..........................██..██████..██████.....................x\n" +
                 "x..........................██..██..██..██.........................x\n" +
                 "x............................██......██...........................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
-        public static void atoComer3(){
+    public static void atoComer3() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -84,14 +84,14 @@ public class UrsoComer {
                 "x......................██...........█..█.......██.................x\n" +
                 "x......................██............██........██.................x\n" +
                 "x........................██..................██...................x\n" +
-                "x..........................██..██████..██████.....................x\n"+
+                "x..........................██..██████..██████.....................x\n" +
                 "x..........................██..██..██..██.........................x\n" +
                 "x............................██......██...........................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
-        public static void atoComer4(){
+    public static void atoComer4() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -114,14 +114,14 @@ public class UrsoComer {
                 "x......................██...........█..█.......██.................x\n" +
                 "x......................██............██........██.................x\n" +
                 "x........................██..................██...................x\n" +
-                "x..........................██..██████..██████.....................x\n"+
+                "x..........................██..██████..██████.....................x\n" +
                 "x..........................██..██..██..██.........................x\n" +
                 "x............................██......██...........................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
-        public static void atoComer5(){
+    public static void atoComer5() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -144,14 +144,14 @@ public class UrsoComer {
                 "x......................██...........█..█.......██.................x\n" +
                 "x......................██............██........██.................x\n" +
                 "x........................██..................██...................x\n" +
-                "x..........................██..██████..██████.....................x\n"+
+                "x..........................██..██████..██████.....................x\n" +
                 "x..........................██..██..██..██.........................x\n" +
                 "x............................██......██...........................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
-        public static void atoComer6(){
+    public static void atoComer6() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -174,12 +174,10 @@ public class UrsoComer {
                 "x......................██...........█..█....██....................x\n" +
                 "x......................██............██.....██....................x\n" +
                 "x........................██..............██.......................x\n" +
-                "x..........................██..██████..██.........................x\n"+
+                "x..........................██..██████..██.........................x\n" +
                 "x..........................██..██..██..██.........................x\n" +
                 "x............................██......██...........................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
-
-
 }

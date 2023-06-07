@@ -1,7 +1,7 @@
 package tamagotchi.animacao.sapinho;
 
 public class SapoPadrao {
-    public static void padrao1(){
+    public static void padrao1() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -23,14 +23,14 @@ public class SapoPadrao {
                 "x.....................████............██████......................x\n" +
                 "x.....................██..................██......................x\n" +
                 "x.......................██..............██........................x\n" +
-                "x.........................██..██████..██..........................x\n"+
+                "x.........................██..██████..██..........................x\n" +
                 "x.........................██..██....██............................x\n" +
                 "x...........................██....................................x");
         System.out.println("x.................................................................x");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
-    public static void padrao2(){
+    public static void padrao2() {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         System.out.println("x     _                                    _       _     _        x\n" +
                 "x    | |                                  | |     | |   (_)       x\n" +
@@ -52,7 +52,7 @@ public class SapoPadrao {
                 "x.....................██████............████......................x\n" +
                 "x.....................██..................██......................x\n" +
                 "x.......................██..............██........................x\n" +
-                "x.........................██..██████..██..........................x\n"+
+                "x.........................██..██████..██..........................x\n" +
                 "x...........................██....██..██..........................x\n" +
                 "x...................................██............................x");
         System.out.println("x.................................................................x");

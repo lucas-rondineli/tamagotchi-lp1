@@ -3,22 +3,20 @@ package tools;
 import java.io.InputStream;
 import java.util.Scanner;
 import java.util.function.Predicate;
-import java.util.NoSuchElementException;
 
 /**
- * The {@code Validator} class facilitates the user input.
- * Using the Scanner class and ensuring that it's methods returns the
- * required input.
+ * The {@code Validator} class facilitates user input by using the Scanner class
+ * and ensuring that its methods return the required input.
  */
 public class Validator {
     private Scanner sc;
     private boolean closed = false;
 
     /**
-     * Constructs a new {@code Validator} that produces values scanned
-     * from the specified input stream using the {@code Scanner} class.
+     * Constructs a new {@code Validator} instance that reads values from the
+     * specified input stream using the {@code Scanner} class.
      * 
-     * @param source An input stream to be scanned
+     * @param source An input stream to be scanned.
      */
     public Validator(InputStream source) {
         sc = new Scanner(source);
@@ -27,7 +25,8 @@ public class Validator {
     /**
      * Closes the Scanner used by this class.
      * 
-     * @return the {@code boolean} indicating if the {@code Scanner} was closed
+     * @return {@code true} if the {@code Scanner} was successfully closed,
+     *         {@code false} otherwise.
      */
     public boolean close() {
         if (closed)
@@ -38,17 +37,16 @@ public class Validator {
     }
 
     /**
-     * This method ensures that the input from the user will return
-     * an Integer that meet the necessary requirements.
+     * Validates the user input to ensure it returns an Integer that meets the
+     * specified requirements.
      * 
-     * @param msg  A String which will be shown to the user
-     * @param err  A String which will be shown to the user if the input don't meet
-     *             the necessary requiriments
-     * @param test A Predicate that receives an Integer and that must return a
-     *             boolean value
-     * @return An Integer with the requirements informed in the Predicate
-     * @throws IllegalStateException  if this class Scanner is closed
-     * @throws NoSuchElementException if input is exhausted
+     * @param msg  A String to be displayed to the user.
+     * @param err  A String to be displayed to the user if the input does not meet
+     *             the required conditions.
+     * @param test A Predicate that takes an Integer as input and returns a boolean
+     *             value.
+     * @return An Integer that satisfies the conditions specified by the Predicate.
+     * @throws IllegalStateException if this instance's Scanner is closed.
      */
     public int validateInt(String msg, String err, Predicate<Integer> test) {
         if (closed)
@@ -71,17 +69,16 @@ public class Validator {
     }
 
     /**
-     * This method ensures that the input from the user will return
-     * a Double that meet the necessary requirements.
+     * Validates the user input to ensure it returns a double that meets the
+     * specified requirements.
      * 
-     * @param msg  A String which will be shown to the user.
-     * @param err  A String which will be shown to the user if the input don't meet
-     *             the necessary requiriments
-     * @param test A Predicate that receives a Double and that must return a
-     *             boolean value
-     * @return A Double with the requirements informed in the Predicate
-     * @throws IllegalStateException  if this class Scanner is closed
-     * @throws NoSuchElementException if input is exhausted
+     * @param msg  A String to be displayed to the user.
+     * @param err  A String to be displayed to the user if the input does not meet
+     *             the required conditions.
+     * @param test A Predicate that takes a Double as input and returns a boolean
+     *             value.
+     * @return A Double that satisfies the conditions specified by the Predicate.
+     * @throws IllegalStateException if this instance's Scanner is closed.
      */
     public double validateDouble(String msg, String err, Predicate<Double> test) {
         if (closed)
@@ -104,17 +101,16 @@ public class Validator {
     }
 
     /**
-     * This method ensures that the input from the user will return
-     * a String that meet the necessary requirements.
+     * Validates the user input to ensure it returns a String that meets the
+     * specified requirements.
      * 
-     * @param msg  A String which will be shown to the user.
-     * @param err  A String which will be shown to the user if the input don't meet
-     *             the necessary requiriments
-     * @param test A Predicate that receives a String and that must return a
-     *             boolean value
-     * @return A String with the requirements informed in the Predicate
-     * @throws IllegalStateException  if this class Scanner is closed
-     * @throws NoSuchElementException if no line was found
+     * @param msg  A String to be displayed to the user.
+     * @param err  A String to be displayed to the user if the input does not meet
+     *             the required conditions.
+     * @param test A Predicate that takes a String as input and returns a boolean
+     *             value.
+     * @return A String that satisfies the conditions specified by the Predicate.
+     * @throws IllegalStateException if this instance's Scanner is closed.
      */
     public String validateString(String msg, String err, Predicate<String> test) {
         if (closed)
