@@ -86,6 +86,10 @@ public abstract class TamagotchiBase implements Serializable {
         this.anm = anm;
     }
 
+    public Thread getControladorDaAnimacao() {
+        return this.controladorDaAnimacao;
+    }
+
     protected void setEstadoAtual(int estado) {
         this.estadoAtual = estado;
     }

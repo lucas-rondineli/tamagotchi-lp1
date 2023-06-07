@@ -64,9 +64,10 @@ public class Entrada {
                     ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(caminhoDosDados));
                     oos.writeObject(tamagotchi);
                     oos.close();
+
+                    tamagotchi.getControladorDaAnimacao().join();
                     System.out.printf("Tamagotchi Salvo com Sucesso.");
                 } catch (Exception e) {
-                    System.out.println(e);
                 }
                 break;
             }
@@ -85,5 +86,6 @@ public class Entrada {
                     tamagotchi.dormir();
             }
         }
+        vd.close();
     }
 }
