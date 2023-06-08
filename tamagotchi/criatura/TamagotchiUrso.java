@@ -1,6 +1,6 @@
 package tamagotchi.criatura;
 
-import tamagotchi.animacao.mametchi.AnimacaoUrso;
+import tamagotchi.animacao.ursinho.AnimacaoUrso;
 
 public class TamagotchiUrso extends TamagotchiBase {
     public TamagotchiUrso(String nome) {

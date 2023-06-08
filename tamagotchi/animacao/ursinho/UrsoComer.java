@@ -1,4 +1,4 @@
-package tamagotchi.animacao.mametchi;
+package tamagotchi.animacao.ursinho;
 
 public class UrsoComer {
     public static void atoComer1() {

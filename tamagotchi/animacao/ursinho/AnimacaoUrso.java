@@ -1,4 +1,4 @@
-package tamagotchi.animacao.mametchi;
+package tamagotchi.animacao.ursinho;
 
 import tamagotchi.animacao.IAnimacao;
 import tamagotchi.animacao.AnimacaoMaca;
