@@ -7,6 +7,7 @@ public interface IAnimacao {
     public int TEMPO_BRINCANDO = 2000;
     public int TEMPO_DORMINDO = 4500;
     public int TEMPO_LIMPANDO = 3000;
+    public int TEMPO_MORTO = 1000;
 
     // Métodos
     public void parado();

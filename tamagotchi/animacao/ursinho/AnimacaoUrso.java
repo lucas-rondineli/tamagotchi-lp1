@@ -11,6 +11,18 @@ public class AnimacaoUrso implements IAnimacao, Serializable {
     // Atributos
     private TamagotchiBase tamagotchi;
     transient private Som som = new Som();
+    private int framesParado = 2;
+    private int framesComendo = 9;
+    private int framesBrincando = 4;
+    private int framesDormindo = 9;
+    private int framesLimpando = 6;
+    private int framesMorto = 4;
+    private int tempoDoFrameParado = IAnimacao.TEMPO_PARADO/framesParado;
+    private int tempoDoFrameComendo = IAnimacao.TEMPO_COMENDO/framesComendo;
+    private int tempoDoFrameBrincando = IAnimacao.TEMPO_BRINCANDO / framesBrincando;
+    private int tempoDoFrameDormindo = IAnimacao.TEMPO_DORMINDO / framesDormindo;
+    private int tempoDoFrameLimpando = IAnimacao.TEMPO_LIMPANDO / framesLimpando;
+    private int tempoDoFrameMorto = IAnimacao.TEMPO_MORTO/ framesMorto;
 
     // Construtor
     public AnimacaoUrso(TamagotchiBase tamagotchi) {
@@ -19,146 +31,140 @@ public class AnimacaoUrso implements IAnimacao, Serializable {
 
     // Métodos
     public void parado() {
-        int tempoDoFrame = IAnimacao.TEMPO_PARADO / 2;
 
         if (this.tamagotchi.getPerigo())
             this.som.alerta();
+
         this.limpaTela();
         UrsoPadrao.padrao1();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameParado);
 
         UrsoPadrao.padrao2();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameParado);
     }
 
     public void comendo() {
-        int tempoDoFrame = IAnimacao.TEMPO_COMENDO / 9;
 
         this.limpaTela();
         AnimacaoMaca.maca1();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameComendo);
 
         AnimacaoMaca.maca3();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameComendo);
 
         AnimacaoMaca.maca5();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameComendo);
 
         UrsoComer.atoComer1();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameComendo);
         som.comer();
 
         UrsoComer.atoComer2();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameComendo);
 
         UrsoComer.atoComer3();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameComendo);
         som.comer();
 
         UrsoComer.atoComer4();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameComendo);
 
         UrsoComer.atoComer5();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameComendo);
         som.comer();
 
         UrsoComer.atoComer6();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameComendo);
     }
 
     public void brincando() {
-        int tempoDoFrame = IAnimacao.TEMPO_BRINCANDO / 4;
 
         this.limpaTela();
         UrsoBrincar.brabo1();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameBrincando);
         som.brincar();
 
         UrsoBrincar.brabo2();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameBrincando);
 
         UrsoBrincar.brabo1();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameBrincando);
         som.brincar();
 
         UrsoBrincar.brabo2();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameBrincando);
     }
 
     public void dormindo() {
-        int tempoDoFrame = IAnimacao.TEMPO_DORMINDO / 9;
 
         this.limpaTela();
         UrsoDormir.dormir1();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameDormindo);
         som.dormir();
 
         UrsoDormir.dormir2();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameDormindo);
 
         UrsoDormir.dormir3();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameDormindo);
         som.dormir();
 
         UrsoDormir.dormir4();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameDormindo);
 
         UrsoDormir.dormir5();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameDormindo);
 
         UrsoDormir.dormir6();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameDormindo);
         som.dormir();
 
         UrsoDormir.dormir7();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameDormindo);
 
         UrsoDormir.dormir8();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameDormindo);
 
         UrsoDormir.dormir9();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameDormindo);
     }
 
     public void limpando() {
-        int tempoDoFrame = IAnimacao.TEMPO_LIMPANDO / 6;
 
         this.limpaTela();
         UrsoCoco.coco1();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameLimpando);
         som.limpar();
 
         UrsoCoco.coco2();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameLimpando);
 
         UrsoLimpeza.limpar1();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameLimpando);
 
         UrsoLimpeza.limpar2();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameLimpando);
 
         UrsoLimpeza.limpar3();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameLimpando);
 
         UrsoLimpeza.limpar4();
-        cicloDeAnimacao(tempoDoFrame);
+        cicloDeAnimacao(this.tempoDoFrameLimpando);
     }
 
     public void morto() {
-        int tempoDoFrame = 500;
-
         this.limpaTela();
         AnimacaoMorrer.morrer1();
-        this.esperar(tempoDoFrame);
+        this.esperar(this.tempoDoFrameMorto);
         this.limpaTela();
         som.morrer();
 
         AnimacaoMorrer.morrer2();
-        this.esperar(tempoDoFrame);
+        this.esperar(this.tempoDoFrameMorto);
         this.limpaTela();
 
         AnimacaoMorrer.morrer1();
-        this.esperar(tempoDoFrame);
+        this.esperar(this.tempoDoFrameMorto);
         this.limpaTela();
 
         AnimacaoMorrer.morrer2();
