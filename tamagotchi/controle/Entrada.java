@@ -2,6 +2,7 @@ package tamagotchi.controle;
 
 import tamagotchi.criatura.*;
 import tools.Validator;
+import tools.FolderFinder;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,30 +13,34 @@ public class Entrada {
     public static void main(String[] args) {
         Validator vd = new Validator(System.in);
         TamagotchiBase tamagotchi;
+        String caminhoDosDados = FolderFinder.findAbsolutePath(System.getProperty("user.dir"), "tamagotchi")
+                + "\\dados";
         int opt;
 
         // Criando um Tamagotchi novo ou recuperando-o da memória
+        new File(caminhoDosDados).mkdir();
+        caminhoDosDados += "\\Tamagotchi.data";
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Tamagotchi.data"));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(caminhoDosDados));
             tamagotchi = (TamagotchiBase) ois.readObject();
             tamagotchi.reiniciar();
             ois.close();
         } catch (Exception e) {
             String nome = vd.validateString("Por favor, entre com o nome do seu Tamagotchi: ",
-                    "Erro. Um nome vazio não é válido.\n\n",
+                    "Erro. Um nome vazio, ou com mais de 10 caracteres, não é válido.\n\n",
                     (n) -> {
-                        return n.length() > 0;
+                        return 0 < n.length() && n.length() <= 10;
                     });
-            opt = vd.validateInt("\nEscolha um tipo de Tamagotchi.\n1 - Cachorro\n2 - Gato\n",
+            opt = vd.validateInt("\nEscolha um tipo de Tamagotchi.\n1 - Ursinho\n2 - Sapinho\n",
                     "Erro. Digite um número entre 1 e 2.\n\n",
                     (n) -> {
                         return n == 1 || n == 2;
                     });
 
             if (opt == 1)
-                tamagotchi = new TamagotchiCachorro(nome);
+                tamagotchi = new TamagotchiUrso(nome);
             else
-                tamagotchi = new TamagotchiGato(nome);
+                tamagotchi = new TamagotchiSapo(nome);
         }
 
         // Iniciando o Tamagotchi e recebendo as entradas do usuário
@@ -48,7 +53,7 @@ public class Entrada {
 
             if (!tamagotchi.getEstaVivo()) {
                 tamagotchi.getAnimacao().morto();
-                new File("Tamagotchi.data").delete();
+                new File(caminhoDosDados).delete();
                 break;
             }
 
@@ -56,10 +61,12 @@ public class Entrada {
                 tamagotchi.matar();
                 try {
                     Thread.sleep(tamagotchi.RELOGIO_DOS_STATUS);
-                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Tamagotchi.data"));
+                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(caminhoDosDados));
                     oos.writeObject(tamagotchi);
                     oos.close();
-                    System.out.printf("\nTamagotchi Salvo com Sucesso.");
+
+                    tamagotchi.getControladorDaAnimacao().join();
+                    System.out.printf("Tamagotchi Salvo com Sucesso.");
                 } catch (Exception e) {
                 }
                 break;
@@ -73,11 +80,12 @@ public class Entrada {
                     tamagotchi.brincar();
                     break;
                 case 3:
-                    tamagotchi.dormir();
+                    tamagotchi.limpar();
                     break;
                 case 4:
-                    tamagotchi.limpar();
+                    tamagotchi.dormir();
             }
         }
+        vd.close();
     }
 }

@@ -1,6 +1,6 @@
 package tamagotchi.criatura;
 
-import tamagotchi.animacao.Animacao;
+import tamagotchi.animacao.IAnimacao;
 import java.lang.Thread;
 import java.io.Serializable;
 
@@ -9,10 +9,16 @@ public abstract class TamagotchiBase implements Serializable {
     public final int RELOGIO_DOS_STATUS = 500;
     public final int FOME_MINIMA = 0;
     public final int FOME_MAXIMA = 100;
+    public final double FOME_ALERTA = (FOME_MAXIMA - FOME_MINIMA) * 0.7;
+    public final int FELICIDADE_MINIMA = 0;
+    public final int FELICIDADE_MAXIMA = 100;
+    public final double FELICIDADE_ALERTA = (FELICIDADE_MAXIMA - FELICIDADE_MINIMA) * 0.3;
     public final int ENERGIA_MINIMA = 0;
     public final int ENERGIA_MAXIMA = 100;
+    public final double ENERGIA_ALERTA = (ENERGIA_MAXIMA - ENERGIA_MINIMA) * 0.3;
     public final int LIMPEZA_MINIMA = 0;
     public final int LIMPEZA_MAXIMA = 100;
+    public final double LIMPEZA_ALERTA = (LIMPEZA_MAXIMA - LIMPEZA_MINIMA) * 0.3;
     public final int PARADO = 0;
     public final int COMENDO = 1;
     public final int BRINCANDO = 2;
@@ -22,11 +28,12 @@ public abstract class TamagotchiBase implements Serializable {
     // Atributos
     protected String nome;
     protected int fome;
+    protected int felicidade;
     protected int energia;
     protected int limpeza;
     protected boolean estaVivo;
     protected int estadoAtual;
-    protected Animacao anm;
+    protected IAnimacao anm;
 
     transient protected Thread controladorDosStatus = new Thread(new StatusRunnable(this));
     transient protected Thread controladorDaAnimacao = new Thread(new AnimacaoRunnable(this));
@@ -35,6 +42,7 @@ public abstract class TamagotchiBase implements Serializable {
     public TamagotchiBase(String nome) {
         this.setNome(nome);
         this.fome = this.FOME_MINIMA;
+        this.felicidade = this.FELICIDADE_MAXIMA;
         this.energia = this.ENERGIA_MAXIMA;
         this.limpeza = this.LIMPEZA_MAXIMA;
         this.estaVivo = true;
@@ -48,6 +56,10 @@ public abstract class TamagotchiBase implements Serializable {
 
     public int getFome() {
         return this.fome;
+    }
+
+    public int getFelicidade() {
+        return this.felicidade;
     }
 
     public int getEnergia() {
@@ -66,19 +78,30 @@ public abstract class TamagotchiBase implements Serializable {
         return this.estadoAtual;
     }
 
-    public Animacao getAnimacao() {
+    public IAnimacao getAnimacao() {
         return this.anm;
+    }
+
+    public Thread getControladorDaAnimacao() {
+        return this.controladorDaAnimacao;
+    }
+
+    public boolean getPerigo() {
+        return this.getFome() > this.FOME_ALERTA ||
+                this.getFelicidade() < this.FELICIDADE_ALERTA ||
+                this.getEnergia() < this.ENERGIA_ALERTA ||
+                this.getLimpeza() < this.LIMPEZA_ALERTA;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setAnimacao(Animacao anm) {
+    protected void setAnimacao(IAnimacao anm) {
         this.anm = anm;
     }
 
-    public void setEstadoAtual(int estado) {
+    protected void setEstadoAtual(int estado) {
         this.estadoAtual = estado;
     }
 
@@ -90,33 +113,28 @@ public abstract class TamagotchiBase implements Serializable {
         }
     }
 
-    public void cicloDosStatus() {
-        this.fome++;
-        this.energia--;
-        this.limpeza--;
-    }
-
     public void alimentar() {
         this.setEstadoAtual(this.COMENDO);
         this.fome = this.FOME_MINIMA;
-        this.resetarEstado(Animacao.TEMPO_COMENDO);
+        this.resetarEstado(IAnimacao.TEMPO_COMENDO);
     }
 
     public void brincar() {
         this.setEstadoAtual(this.BRINCANDO);
-        this.resetarEstado(Animacao.TEMPO_BRINCANDO);
+        this.felicidade = this.FELICIDADE_MAXIMA;
+        this.resetarEstado(IAnimacao.TEMPO_BRINCANDO);
     }
 
     public void limpar() {
         this.setEstadoAtual(this.LIMPANDO);
         this.limpeza = this.LIMPEZA_MAXIMA;
-        this.resetarEstado(Animacao.TEMPO_LIMPANDO);
+        this.resetarEstado(IAnimacao.TEMPO_LIMPANDO);
     }
 
     public void dormir() {
         this.setEstadoAtual(this.DORMINDO);
         this.energia = this.ENERGIA_MAXIMA;
-        this.resetarEstado(Animacao.TEMPO_DORMINDO);
+        this.resetarEstado(IAnimacao.TEMPO_DORMINDO);
     }
 
     public void matar() {
@@ -125,11 +143,19 @@ public abstract class TamagotchiBase implements Serializable {
 
     public void reiniciar() {
         this.estaVivo = true;
+        this.anm.reiniciarSom();
         this.controladorDosStatus = new Thread(new StatusRunnable(this));
         this.controladorDaAnimacao = new Thread(new AnimacaoRunnable(this));
     }
 
-    public void resetarEstado(int tempo) {
+    void cicloDosStatus() {
+        this.fome++;
+        this.felicidade--;
+        this.energia--;
+        this.limpeza--;
+    }
+
+    void resetarEstado(int tempo) {
         try {
             Thread.sleep(tempo);
         } catch (InterruptedException e) {
