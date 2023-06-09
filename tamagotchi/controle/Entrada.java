@@ -2,7 +2,6 @@ package tamagotchi.controle;
 
 import tamagotchi.criatura.*;
 import tools.Validator;
-import tools.FolderFinder;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,8 +12,7 @@ public class Entrada {
     public static void main(String[] args) {
         Validator vd = new Validator(System.in);
         TamagotchiBase tamagotchi;
-        String caminhoDosDados = FolderFinder.findAbsolutePath(System.getProperty("user.dir"), "tamagotchi")
-                + "\\dados";
+        String caminhoDosDados = System.getProperty("user.dir") + "\\dados";
         int opt;
 
         // Criando um Tamagotchi novo ou recuperando-o da memória

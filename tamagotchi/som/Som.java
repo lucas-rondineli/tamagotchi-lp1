@@ -1,7 +1,7 @@
 package tamagotchi.som;
 
-import tools.FolderFinder;
-import java.io.File;
+import java.io.InputStream;
+import java.io.BufferedInputStream;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -15,9 +15,6 @@ public class Som {
     private Clip morrer;
 
     public Som() {
-        String caminhoSonsDb = FolderFinder.findAbsolutePath(System.getProperty("user.dir"), "tamagotchi")
-                + "\\som\\sonsDB\\";
-
         try {
             this.alerta = AudioSystem.getClip();
             this.comer = AudioSystem.getClip();
@@ -28,33 +25,20 @@ public class Som {
         } catch (Exception e) {
         }
 
-        AudioInputStream tmp;
-        try {
-            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "17.wav"));
-            this.alerta.open(tmp);
-            tmp.close();
-
-            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "09.wav"));
-            this.comer.open(tmp);
-            tmp.close();
-
-            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "08.wav"));
-            this.brincar.open(tmp);
-            tmp.close();
-
-            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "19.wav"));
-            this.limpar.open(tmp);
-            tmp.close();
-
-            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "04.wav"));
-            this.dormir.open(tmp);
-            tmp.close();
-
-            tmp = AudioSystem.getAudioInputStream(new File(caminhoSonsDb + "03.wav"));
-            this.morrer.open(tmp);
-            tmp.close();
-        } catch (Exception e) {
-        }
+        Clip[] clips = {this.alerta, this.comer, this.brincar, this.limpar, this.dormir, this.morrer};
+        String[] arquivosDeAudio = {"/tamagotchi/som/sonsDB/17.wav",
+                "/tamagotchi/som/sonsDB/09.wav", 
+                "/tamagotchi/som/sonsDB/08.wav", 
+                "/tamagotchi/som/sonsDB/19.wav", 
+                "/tamagotchi/som/sonsDB/04.wav", 
+                "/tamagotchi/som/sonsDB/03.wav"};
+        for (int i = 0; i < 6; i++)
+            try (InputStream is = Som.class.getResourceAsStream(arquivosDeAudio[i]);
+            BufferedInputStream bis = new BufferedInputStream(is);
+            AudioInputStream ais = AudioSystem.getAudioInputStream(bis)) {
+                clips[i].open(ais);
+            } catch (Exception e) {
+            }
     }
 
     public void alerta() {

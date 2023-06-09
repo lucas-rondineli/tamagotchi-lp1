@@ -1,0 +1,11 @@
+// Em caso de haver alguma mudança nas classes e/ou nos arquivos de áudio, realizar o seguinte procedimento:
+
+// 1. Entrar na pasta onde estão os recursos, tamagotchi e tools
+
+// 2. Executar um dos seguintes códigos, dependendo de qual dos arquivos precisa ser alterado:
+dir /b /s *.class > LocaisDasClasses.txt
+dir /b /s *.class > LocaisDosSons.txt
+
+// 3. Remover todo o caminho anterior "tamagotchi" e "tools", deixando apenas esses dois e suas subpastas, seguindo este padrão:
+tamagotchi\som\Som.class
+tools\FolderFinder.class
