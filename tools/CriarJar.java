@@ -29,6 +29,7 @@ public class CriarJar {
 
             System.out.println("Executável criado com sucesso.");
         } catch (Exception e) {
+            System.out.println(e);
         }
     }
 }

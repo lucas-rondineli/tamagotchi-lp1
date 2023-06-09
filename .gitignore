@@ -1,3 +1,6 @@
+# Bin folder
+bin/
+
 # Virtual ambient files
 *.xml
 *.iml
