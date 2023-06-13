@@ -11,6 +11,9 @@ Nome | Disciplina
 -|-
 Danielle Rousey Dias Ricarte | Linguagem de Programação I
 
+# Representação em UML
+<img src="https://github.com/lucas-rondineli/tamagotchi-lp1/blob/a9fbd31d6247f09cccb54a94abc6960f8d1df38f/tamagotchi-uml%20(2).png"/>
+
 
 # Introdução 
 O projeto em questão é uma reimaginação de um Tamagotchi, o mascote virtual que foi famoso nos anos 90, onde o usuário o levava no bolso para qualquer lugar e deveria suprir as necessidades do mascote para mantê-lo vivo.<p><p>
